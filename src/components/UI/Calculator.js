@@ -5,50 +5,61 @@ import calculate from '../logic/calculate';
 class Calculator extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { output: 0 };
+    this.state = {
+      total: 0,
+      next: '',
+      operation: '',
+    };
+  }
+
+  handleClick(event) {
+    const { total, next, operation } = this.state;
+    this.setState(calculate({ total, operation, next }, event.target.value));
   }
 
   render() {
-    const { output } = this.state;
+    const { total, next, operation } = this.state;
     return (
-      <div>
-        <table className="table table-bordered">
-          <tbody>
-            <tr className="output">
-              <td colSpan="4">{output}</td>
-            </tr>
-            <tr>
-              <td id="ac">AC</td>
-              <td>+/-</td>
-              <td>%</td>
-              <td className="orange-colour">÷</td>
-            </tr>
-            <tr>
-              <td>7</td>
-              <td>8</td>
-              <td>9</td>
-              <td className="orange-colour">x</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>5</td>
-              <td>6</td>
-              <td className="orange-colour">-</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td className="orange-colour">+</td>
-            </tr>
-            <tr>
-              <td colSpan="2">0</td>
-              <td>.</td>
-              <td className="orange-colour">=</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <table className="table table-bordered">
+        <tbody>
+          <tr className="output">
+            <td colSpan="4">
+              {total}
+              {operation}
+              {next}
+            </td>
+          </tr>
+          <tr>
+            <td><input type="button" onClick={this.handleClick.bind(this)} value="AC" /></td>
+            <td><input type="button" onClick={this.handleClick.bind(this)} value="+/-" /></td>
+            <td><input type="button" onClick={this.handleClick.bind(this)} value="%" /></td>
+            <td className="orange-colour"><input type="button" onClick={this.handleClick.bind(this)} value="÷" /></td>
+          </tr>
+          <tr>
+            <td><input type="button" onClick={this.handleClick.bind(this)} value="7" /></td>
+            <td><input type="button" onClick={this.handleClick.bind(this)} value="8" /></td>
+            <td><input type="button" onClick={this.handleClick.bind(this)} value="9" /></td>
+            <td className="orange-colour"><input type="button" onClick={this.handleClick.bind(this)} value="x" /></td>
+          </tr>
+          <tr>
+            <td><input type="button" onClick={this.handleClick.bind(this)} value="4" /></td>
+            <td><input type="button" onClick={this.handleClick.bind(this)} value="5" /></td>
+            <td><input type="button" onClick={this.handleClick.bind(this)} value="6" /></td>
+            <td className="orange-colour"><input type="button" onClick={this.handleClick.bind(this)} value="-" /></td>
+          </tr>
+          <tr>
+            <td><input type="button" onClick={this.handleClick.bind(this)} value="1" /></td>
+            <td><input type="button" onClick={this.handleClick.bind(this)} value="2" /></td>
+            <td><input type="button" onClick={this.handleClick.bind(this)} value="3" /></td>
+            <td className="orange-colour"><input type="button" onClick={this.handleClick.bind(this)} value="+" /></td>
+          </tr>
+          <tr>
+            <td colSpan="2"><input type="button" onClick={this.handleClick.bind(this)} value="0" /></td>
+            <td><input type="button" onClick={this.handleClick.bind(this)} value="." /></td>
+            <td className="orange-colour"><input type="button" onClick={this.handleClick.bind(this)} value="=" /></td>
+          </tr>
+        </tbody>
+      </table>
     );
   }
 }
