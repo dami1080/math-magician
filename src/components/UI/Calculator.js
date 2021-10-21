@@ -1,6 +1,14 @@
 import React from 'react';
 import './Calculator.css';
 import calculate from '../logic/calculate';
+import CalculatorRow from './CalculatorRow';
+
+const tableData = [
+  ['AC', '+/-', '%', '÷'],
+  ['7', '8', '9', 'x'],
+  ['4', '5', '6', '-'],
+  ['1', '2', '3', '+'],
+];
 
 class Calculator extends React.Component {
   constructor(props) {
@@ -10,15 +18,18 @@ class Calculator extends React.Component {
       next: '',
       operation: '',
     };
+
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(event) {
-    const { total, next, operation } = this.state;
+    const { total, operation, next } = this.state;
     this.setState(calculate({ total, operation, next }, event.target.value));
   }
 
   render() {
-    const { total, next, operation } = this.state;
+    const { total, operation, next } = this.state;
+
     return (
       <table className="table table-bordered">
         <tbody>
@@ -29,34 +40,14 @@ class Calculator extends React.Component {
               {next}
             </td>
           </tr>
+          <CalculatorRow items={tableData[0]} handler={this.handleClick} />
+          <CalculatorRow items={tableData[1]} handler={this.handleClick} />
+          <CalculatorRow items={tableData[2]} handler={this.handleClick} />
+          <CalculatorRow items={tableData[3]} handler={this.handleClick} />
           <tr>
-            <td><input type="button" onClick={this.handleClick.bind(this)} value="AC" /></td>
-            <td><input type="button" onClick={this.handleClick.bind(this)} value="+/-" /></td>
-            <td><input type="button" onClick={this.handleClick.bind(this)} value="%" /></td>
-            <td className="orange-colour"><input type="button" onClick={this.handleClick.bind(this)} value="÷" /></td>
-          </tr>
-          <tr>
-            <td><input type="button" onClick={this.handleClick.bind(this)} value="7" /></td>
-            <td><input type="button" onClick={this.handleClick.bind(this)} value="8" /></td>
-            <td><input type="button" onClick={this.handleClick.bind(this)} value="9" /></td>
-            <td className="orange-colour"><input type="button" onClick={this.handleClick.bind(this)} value="x" /></td>
-          </tr>
-          <tr>
-            <td><input type="button" onClick={this.handleClick.bind(this)} value="4" /></td>
-            <td><input type="button" onClick={this.handleClick.bind(this)} value="5" /></td>
-            <td><input type="button" onClick={this.handleClick.bind(this)} value="6" /></td>
-            <td className="orange-colour"><input type="button" onClick={this.handleClick.bind(this)} value="-" /></td>
-          </tr>
-          <tr>
-            <td><input type="button" onClick={this.handleClick.bind(this)} value="1" /></td>
-            <td><input type="button" onClick={this.handleClick.bind(this)} value="2" /></td>
-            <td><input type="button" onClick={this.handleClick.bind(this)} value="3" /></td>
-            <td className="orange-colour"><input type="button" onClick={this.handleClick.bind(this)} value="+" /></td>
-          </tr>
-          <tr>
-            <td colSpan="2"><input type="button" onClick={this.handleClick.bind(this)} value="0" /></td>
-            <td><input type="button" onClick={this.handleClick.bind(this)} value="." /></td>
-            <td className="orange-colour"><input type="button" onClick={this.handleClick.bind(this)} value="=" /></td>
+            <td colSpan="2"><input type="button" onClick={this.handleClick} value="0" /></td>
+            <td><input type="button" onClick={this.handleClick} value="." /></td>
+            <td className="orange-colour"><input type="button" onClick={this.handleClick} value="=" /></td>
           </tr>
         </tbody>
       </table>
