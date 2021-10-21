@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap');
 
-* {
-  box-sizing: border-box;
-}
-
 html {
   font-family: 'Noto Sans JP', sans-serif;
 }

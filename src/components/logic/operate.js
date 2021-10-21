@@ -1,4 +1,5 @@
 /* eslint import/no-extraneous-dependencies: ["error", {"peerDependencies": true}] */
+
 import Big from 'big.js';
 
 export default function operate(numberOne, numberTwo, operation) {
