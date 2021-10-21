@@ -17,7 +17,7 @@ class Calculator extends React.Component {
               <td colSpan="4">{output}</td>
             </tr>
             <tr>
-              <td>AC</td>
+              <td id="ac">AC</td>
               <td>+/-</td>
               <td>%</td>
               <td className="orange-colour">÷</td>
