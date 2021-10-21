@@ -1,6 +1,6 @@
 # math-magician
 
-This is the first project of the Math Magicians application.It is a set up of the environment and tools needed to develop a React application.    
+In this second milestone of the Math Magicians application, I developed a React component that will hold the core functionality: a calculator.    
 
 # Built with
   - HTML
@@ -13,6 +13,8 @@ This is the first project of the Math Magicians application.It is a set up of th
 ```bash
 $ git clone https://github.com/dami1080/math-magician.git
 $ cd math-magicians
+$ npm install
+$ npm start 
 ```
 
 ### Run project

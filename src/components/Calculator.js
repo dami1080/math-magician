@@ -2,15 +2,15 @@ import React from 'react';
 import './Calculator.css';
 
 class Calculator extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = { output: 0 };
-    }
-  
-    render() {
-      const { output } = this.state;
-      return (
-        <div>
+  constructor(props) {
+    super(props);
+    this.state = { output: 0 };
+  }
+
+  render() {
+    const { output } = this.state;
+    return (
+      <div>
         <table className="table table-bordered">
           <tbody>
             <tr className="output">
@@ -47,9 +47,9 @@ class Calculator extends React.Component {
             </tr>
           </tbody>
         </table>
-      </div> 
-      );
-    }
+      </div>
+    );
+  }
 }
-  
+
 export default Calculator;
