@@ -1,21 +1,26 @@
+/* eslint import/no-extraneous-dependencies: ["error", {"peerDependencies": true}] */
 import React from 'react';
+import PropTypes from 'prop-types';
 
-class CalculatorRow extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { props };
-  }
+const CalculatorRow = (props) => {
+  const { items, onClick } = props;
 
-  render() {
-    const { props } = this.state;
-    return (
-      <tr>
-        <td><input type="button" value={props.items[0]} onClick={props.handler} /></td>
-        <td><input type="button" value={props.items[1]} onClick={props.handler} /></td>
-        <td><input type="button" value={props.items[2]} onClick={props.handler} /></td>
-        <td className="orange-colour"><input type="button" value={props.items[3]} onClick={props.handler} /></td>
-      </tr>
-    );
-  }
-}
+  return (
+    <tr>
+      <td><input type="button" value={items[0]} onClick={onClick} /></td>
+      <td><input type="button" value={items[1]} onClick={onClick} /></td>
+      <td><input type="button" value={items[2]} onClick={onClick} /></td>
+      <td className="orange-colour"><input type="button" value={items[3]} onClick={onClick} /></td>
+    </tr>
+  );
+};
+
+CalculatorRow.propTypes = {
+  items: PropTypes.arrayOf.isRequired,
+};
+
+CalculatorRow.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};
+
 export default CalculatorRow;
