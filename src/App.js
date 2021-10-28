@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import Calculator from './components/UI/Calculator';
 import Home from './pages/Home';
@@ -15,11 +16,21 @@ class App extends React.Component {
     return (
       <fragment>
         <Navbar />
-        <Home />
-        <div className="App">
-          <Calculator />
-        </div>
-        <Quote />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+
+          <Route path="/calculator">
+            <div className="App">
+              <Calculator />
+            </div>
+          </Route>
+
+          <Route path="*">
+            <Quote />
+          </Route>
+        </Switch>
       </fragment>
     );
   }
