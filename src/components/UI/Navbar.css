@@ -1,0 +1,14 @@
+.navbar ul {
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  width: 250px;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.nav-brand {
+  font-size: 40px;
+  color: #28965a;
+  font-weight: 600;
+}

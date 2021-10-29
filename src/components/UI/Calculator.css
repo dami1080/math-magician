@@ -1,23 +1,35 @@
-.table {
+.calculator-page {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.calculator {
   width: 600px;
   background: #d3d3d3;
   color: #333;
   font-weight: 500;
   font-size: 1.2rem;
+  text-align: center;
 }
 
-.table td {
+.calculator td {
   padding: 25px;
 }
 
-.table .output {
+.calculator-heading {
+  color: #d62828;
+  font-style: italic;
+}
+
+.calculator .output {
   background: #6d6a75;
   color: #fff;
   text-align: right;
   font-size: 30px;
 }
 
-.table .orange-colour {
+.calculator .orange-colour {
   background: #f28f3b;
 }
 

@@ -1,0 +1,11 @@
+.quotes-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.quotes-page span {
+  color: #d62828;
+  font-style: italic;
+}

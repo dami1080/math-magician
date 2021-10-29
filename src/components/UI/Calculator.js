@@ -19,26 +19,29 @@ const Calculator = () => {
   };
 
   return (
-    <table className="table table-bordered">
-      <tbody>
-        <tr className="output">
-          <td colSpan="4">
-            {obj.total}
-            {obj.operation}
-            {obj.next}
-          </td>
-        </tr>
-        <CalculatorRow items={tableData[0]} onClick={handleClick} />
-        <CalculatorRow items={tableData[1]} onClick={handleClick} />
-        <CalculatorRow items={tableData[2]} onClick={handleClick} />
-        <CalculatorRow items={tableData[3]} onClick={handleClick} />
-        <tr>
-          <td colSpan="2"><input type="button" onClick={handleClick} value="0" /></td>
-          <td><input type="button" onClick={handleClick} value="." /></td>
-          <td className="orange-colour"><input type="button" onClick={handleClick} value="=" /></td>
-        </tr>
-      </tbody>
-    </table>
+    <div className="calculator-page">
+      <h2 className="calculator-heading">Let&apos;s do some math!</h2>
+      <table className="calculator table-bordered">
+        <tbody>
+          <tr className="output">
+            <td colSpan="4">
+              {obj.total}
+              {obj.operation}
+              {obj.next}
+            </td>
+          </tr>
+          <CalculatorRow items={tableData[0]} onClick={handleClick} />
+          <CalculatorRow items={tableData[1]} onClick={handleClick} />
+          <CalculatorRow items={tableData[2]} onClick={handleClick} />
+          <CalculatorRow items={tableData[3]} onClick={handleClick} />
+          <tr>
+            <td colSpan="2"><input type="button" onClick={handleClick} value="0" /></td>
+            <td><input type="button" onClick={handleClick} value="." /></td>
+            <td className="orange-colour"><input type="button" onClick={handleClick} value="=" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   );
 };
 

@@ -1,0 +1,11 @@
+.home-page h2 {
+  margin-top: 40px;
+  color: #d62828;
+  font-style: italic;
+}
+
+.welcome-msg {
+  margin-top: 70px;
+  line-height: 2.5rem;
+  height: 100%;
+}

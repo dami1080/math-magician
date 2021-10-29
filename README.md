@@ -22,6 +22,15 @@ $ npm start
 ```bash 
 ```
 
+![](./src/image/Screenshot.png)
+
+
+
+
+## Live Demo
+
+[Live Demo Link]( https://dami1080.github.io/math-magician/)
+
 ## Author
 
 Feel free to reach out. I'm always happy to connect :slightly_smiling_face:
