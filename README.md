@@ -22,7 +22,7 @@ $ npm start
 ```bash 
 ```
 
-![](./src/image/screenshot.png)
+![](./src/image/Screenshot.png)
 
 
 
